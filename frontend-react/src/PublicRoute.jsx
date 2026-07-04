@@ -1,11 +1,11 @@
-import {Children, useContext} from 'react'
+import { useContext} from 'react'
 import { AuthContext } from './AuthProvider'
 import { Navigate } from 'react-router-dom'
 
-const PublicRoute = ({Children}) => {
+const PublicRoute = ({children}) => {
     const { isLoggedIn } = useContext(AuthContext)
   return !isLoggedIn ? (
-    Children
+    children
   ) : (
     <Navigate to='/dashboard' />
   )
